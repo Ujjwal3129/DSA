@@ -21,28 +21,56 @@ class Solution {
         // ArrayList<ListNode>
 
 
-        if(head.next== null){
+        // if(head.next== null){
+        //     return null;
+        // }
+        // ListNode temp = head;
+
+        // int count=0;
+        // while(temp!=null){
+        //     count++;
+        //     temp= temp.next;
+        // }
+
+
+        // temp = head;
+
+
+        // for(int i=0; i<count/2-1; i++){
+        //     temp = temp.next;
+        // }
+
+
+        // temp.next= temp.next.next;
+        // return head;
+
+
+
+        ArrayList<ListNode> list = new ArrayList<>();
+
+        if(head.next == null){
             return null;
         }
+
+
         ListNode temp = head;
 
-        int count=0;
+
         while(temp!=null){
-            count++;
+            list.add(temp);
             temp= temp.next;
         }
 
 
-        temp = head;
+        int middle = list.size()/2;
 
 
-        for(int i=0; i<count/2-1; i++){
-            temp = temp.next;
-        }
+        list.get(middle-1).next = list.get(middle).next;
 
-
-        temp.next= temp.next.next;
         return head;
+
+
+
 
     }
 }
