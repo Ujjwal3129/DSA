@@ -12,31 +12,59 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
-        ArrayList<ListNode> list = new ArrayList<>();
+        // ArrayList<ListNode> list = new ArrayList<>();
+
+        // ListNode tempA = headA;
+        // ListNode tempB = headB;
+
+        // while (tempA != null) {
+        //     list.add(tempA);
+        //     tempA = tempA.next;
+        // }
+
+        // while (tempB != null) {
+        //     int Index = 0;
+
+        //     while (Index < list.size()) {
+        //         if (tempB == list.get(Index)) {
+        //             return tempB;
+        //         }
+
+        //         Index++;
+        //     }
+
+        //     tempB = tempB.next;
+        // }
+
+        // return null;
 
         ListNode tempA = headA;
         ListNode tempB = headB;
 
-        while (tempA != null) {
-            list.add(tempA);
-            tempA = tempA.next;
-        }
+        while (tempA != tempB) {
 
-        while (tempB != null) {
-            int Index = 0;
+            // if (tempA == tempB) {
+            //     return tempA;
+            // }
 
-            while (Index < list.size()) {
-                if (tempB == list.get(Index)) {
-                    return tempB;
-                }
-
-                Index++;
+            if (tempA == null) {
+                tempA = headB;
+            } else {
+                tempA = tempA.next;
             }
 
-            tempB = tempB.next;
+            if (tempB == null) {
+                tempB = headA;
+            } else {
+                tempB = tempB.next;
+            }
+
+
+            // return tempA;
+
         }
 
-        return null;
+        return tempA;
 
     }
 }
