@@ -4,7 +4,7 @@ class Solution {
 
         long[][] dp = new long[k + 1][n];
 
-        // 0 segments: 1 way
+
         for (int i = 0; i < n; i++) {
             dp[0][i] = 1;
         }
@@ -13,10 +13,7 @@ class Solution {
             long sum = 0;
 
             for (int i = 1; i < n; i++) {
-                /*
-                 * Start a segment at some previous point.
-                 * Number of choices can be accumulated using prefix sums.
-                 */
+               
                 sum = (sum + dp[seg - 1][i - 1]) % MOD;
 
                 dp[seg][i] = (dp[seg][i - 1] + sum) % MOD;
