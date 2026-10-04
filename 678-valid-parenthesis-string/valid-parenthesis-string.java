@@ -13,9 +13,9 @@ class Solution {
                 low--;
                 high--;
             } 
-            else { // '*'
-                low--;    // treat * as ')'
-                high++;   // treat * as '('
+            else {
+                low--;    
+                high++; 
             }
 
             if (high < 0) {
